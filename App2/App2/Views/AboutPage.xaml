@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Views.AboutPage"
+             xmlns:vm="clr-namespace:App2.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <StackLayout>
+            <Frame BackgroundColor="Blue" Padding="24" CornerRadius="0">
+                <Label Text="Welcom" HorizontalTextAlignment="Center" TextColor="White" FontSize="20"></Label>
+            </Frame>
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                    <Label>Login</Label>
+                    <Entry HeightRequest="40" WidthRequest="200"></Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                    <Label>Password</Label>
+                    <Entry HeightRequest="40" WidthRequest="200"></Entry>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <Button x:Name="btn_SignIn" Clicked="btn_SignIn_Click" BackgroundColor="LightGreen" Text="Sign In"></Button>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
